@@ -5,8 +5,32 @@ Library    Selenium2Library
 
 
 *** Testcases ***
-TEST
-	Open Browser    http://localhost:7272/html
+Login เข้าระบบได้อย่างถูกต้อง
+	ลูกค้าธนาคารเข้ามายังหน้า login
+	กรอกชื่อผู้ใช้งาน
+	กรอกรหัสผ่าน
+	กดปุ่ม login เพื่อเข้าระบบ
+	ต้องเข้าหน้าหลักของระบบได้
+	Close Browser
+
 
 
 *** Keywords ***
+ลูกค้าธนาคารเข้ามายังหน้า login
+	Open Browser    http://localhost:7272/html
+
+กรอกชื่อผู้ใช้งาน
+	Input Text    username_field    demo
+
+กรอกรหัสผ่าน
+	Input Text    password_field    mode
+
+กดปุ่ม login เพื่อเข้าระบบ
+	Click Button    LOGIN
+
+ต้องเข้าหน้าหลักของระบบได้
+	Wait Until Page Contains    Login succeeded
+
+
+
+
