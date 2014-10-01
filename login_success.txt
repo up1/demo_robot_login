@@ -5,6 +5,8 @@ Library    Selenium2Library
 
 
 *** Testcases ***
+TEST
+	Open Browser    http://localhost:7272/html
 
 
 *** Keywords ***
